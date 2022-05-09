@@ -14,7 +14,8 @@ namespace StraviaTecMobile.ViewModels
         #region Fields
 
         private ValidatableObject<string> name;
-
+        private ValidatableObject<string> lastname;
+        private ValidatableObject<string> nacionality;
         private ValidatablePair<string> password;
 
         #endregion
@@ -53,6 +54,40 @@ namespace StraviaTecMobile.ViewModels
                 }
 
                 this.SetProperty(ref this.name, value);
+            }
+        }
+        public ValidatableObject<string> Nacionality
+        {
+            get
+            {
+                return this.nacionality;
+            }
+
+            set
+            {
+                if (this.nacionality == value)
+                {
+                    return;
+                }
+
+                this.SetProperty(ref this.nacionality, value);
+            }
+        }
+        public ValidatableObject<string> LastName
+        {
+            get
+            {
+                return this.lastname;
+            }
+
+            set
+            {
+                if (this.lastname == value)
+                {
+                    return;
+                }
+
+                this.SetProperty(ref this.lastname, value);
             }
         }
 
@@ -101,6 +136,8 @@ namespace StraviaTecMobile.ViewModels
         {
             bool isEmail = this.Email.Validate();
             bool isNameValid = this.Name.Validate();
+            bool isLastNameValid = this.LastName.Validate();
+            bool isNacionalityValid = this.Nacionality.Validate();
             bool isPasswordValid = this.Password.Validate();
             return isPasswordValid && isNameValid && isEmail;
         }
@@ -111,6 +148,8 @@ namespace StraviaTecMobile.ViewModels
         private void InitializeProperties()
         {
             this.Name = new ValidatableObject<string>();
+            this.LastName = new ValidatableObject<string>();
+            this.Nacionality = new ValidatableObject<string>();
             this.Password = new ValidatablePair<string>();
         }
 
@@ -120,6 +159,8 @@ namespace StraviaTecMobile.ViewModels
         private void AddValidationRules()
         {
             this.Name.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Name Required" });
+            this.LastName.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "LastName Required" });
+            this.Nacionality.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Nacionality Required" });
             this.Password.Item1.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Password Required" });
             this.Password.Item2.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Re-enter Password" });
         }

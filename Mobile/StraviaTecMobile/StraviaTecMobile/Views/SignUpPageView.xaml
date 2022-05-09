@@ -108,7 +108,109 @@
                                 TextColor="{DynamicResource Red}"
                                 VerticalOptions="FillAndExpand" />
                         </StackLayout>
+                        <StackLayout>
+                            <!--  Entry to get username from user  -->
+                            <border:SfBorder BorderColor="{Binding Source={x:Reference LastNameEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}" Style="{StaticResource LoginFormBorderlessEntryBorderStyle}">
+                                <Grid ColumnDefinitions="*, Auto">
 
+                                    <control:BorderlessEntry
+                                        x:Name="LastNameEntry"
+                                        Margin="15,0"
+                                        HeightRequest="40"
+                                        Placeholder="LastName"
+                                        PlaceholderColor="{StaticResource EntryPlaceholderColor}"
+                                        Style="{StaticResource BorderlessEntryStyle}"
+                                        Text="{Binding LastName.Value}"
+                                        TextColor="{StaticResource Gray-White}">
+                                        <Entry.Behaviors>
+                                            <behaviour:EntryLineValidationBehaviour IsValid="{Binding LastName.IsValid}" />
+                                        </Entry.Behaviors>
+                                    </control:BorderlessEntry>
+
+                                    <!--  Label to display error icon  -->
+                                    <Label
+                                        Grid.Column="1"
+                                        IsVisible="{Binding Path=IsVisible, Source={x:Reference LastNameValidationLabel}}"
+                                        Style="{StaticResource ErrorIconLabelStyle}"
+                                        Text="{StaticResource Error}" />
+                                </Grid>
+                            </border:SfBorder>
+
+                            <!--  Label to display error message  -->
+                            <Label
+                                x:Name="LastNameValidationLabel"
+                                Margin="15,-3,0,0"
+                                IsVisible="{Binding LastName.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                                Style="{StaticResource SimpleLabelStyle}"
+                                Text="{Binding LastName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                                TextColor="{DynamicResource Red}"
+                                VerticalOptions="FillAndExpand" />
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Label
+                                Text="Date of birth"
+                                Margin="13,0"
+                                FontSize="15"
+                                TextColor="{StaticResource EntryPlaceholderColor}">
+
+                            </Label>
+                            <border:SfBorder BorderColor="{Binding Source={x:Reference birthEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}" Style="{StaticResource LoginFormBorderlessEntryBorderStyle}">
+                                <Grid ColumnDefinitions="*, Auto">
+
+                                    <DatePicker x:Name="DateBirthPicker"
+                                MinimumDate="{Binding 
+                                    Source={x:Reference DateBirthPicker},
+                                    Path=Date}"
+                                Margin="15,0"
+                                HeightRequest="40"
+                                FontSize="16"
+                                TextColor="{StaticResource EntryPlaceholderColor}"
+                                Style="{StaticResource LoginFormBorderlessEntryBorderStyle}"    
+                                Format="D"
+                                DateSelected="DateBirthPicker_DateSelected"/>
+                                </Grid>
+                            </border:SfBorder>
+                        </StackLayout>
+                        
+                        <StackLayout>
+                            <!--  Entry to get username from user  -->
+                            <border:SfBorder BorderColor="{Binding Source={x:Reference nacionalityEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}" Style="{StaticResource LoginFormBorderlessEntryBorderStyle}">
+                                <Grid ColumnDefinitions="*, Auto">
+
+                                    <control:BorderlessEntry
+                                        x:Name="nacionalityEntry"
+                                        Margin="15,0"
+                                        HeightRequest="40"
+                                        Placeholder="Nacionality"
+                                        PlaceholderColor="{StaticResource EntryPlaceholderColor}"
+                                        Style="{StaticResource BorderlessEntryStyle}"
+                                        Text="{Binding Nacionality.Value}"
+                                        TextColor="{StaticResource Gray-White}">
+                                        <Entry.Behaviors>
+                                            <behaviour:EntryLineValidationBehaviour IsValid="{Binding Nacionality.IsValid}" />
+                                        </Entry.Behaviors>
+                                    </control:BorderlessEntry>
+
+                                    <!--  Label to display error icon  -->
+                                    <Label
+                                        Grid.Column="1"
+                                        IsVisible="{Binding Path=IsVisible, Source={x:Reference NacionalityValidationLabel}}"
+                                        Style="{StaticResource ErrorIconLabelStyle}"
+                                        Text="{StaticResource Error}" />
+                                </Grid>
+                            </border:SfBorder>
+
+                            <!--  Label to display error message  -->
+                            <Label
+                                x:Name="NacionalityValidationLabel"
+                                Margin="15,-3,0,0"
+                                IsVisible="{Binding Nacionality.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                                Style="{StaticResource SimpleLabelStyle}"
+                                Text="{Binding Nacionality.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                                TextColor="{DynamicResource Red}"
+                                VerticalOptions="FillAndExpand" />
+                        </StackLayout>
                         <!--  Entry to get email ID from user  -->
                         <local:EmailEntry />
 

@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms.Internals;
+﻿using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace StraviaTecMobile.Views
@@ -8,7 +9,7 @@ namespace StraviaTecMobile.Views
     /// </summary>
     [Preserve(AllMembers = true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SignUpPageView
+    public partial class SignUpPageView : ContentPage
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SignUpPageView" /> class.
@@ -16,6 +17,11 @@ namespace StraviaTecMobile.Views
         public SignUpPageView()
         {
             this.InitializeComponent();
+        }
+
+        private void DateBirthPicker_DateSelected(object sender, Xamarin.Forms.DateChangedEventArgs e)
+        {
+
         }
     }
 }
