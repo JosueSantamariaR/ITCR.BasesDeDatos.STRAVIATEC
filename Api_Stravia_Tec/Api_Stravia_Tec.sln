@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api_Stravia_Tec", "Api_Stravia_Tec.csproj", "{307BE7E8-4A25-4C78-81A1-85012398D52B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{307BE7E8-4A25-4C78-81A1-85012398D52B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{307BE7E8-4A25-4C78-81A1-85012398D52B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{307BE7E8-4A25-4C78-81A1-85012398D52B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{307BE7E8-4A25-4C78-81A1-85012398D52B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45D9F607-D365-44B9-99D8-236B63A8229F}
+	EndGlobalSection
+EndGlobal
