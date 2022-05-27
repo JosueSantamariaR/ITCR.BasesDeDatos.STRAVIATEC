@@ -5,10 +5,12 @@
         public int Id { get; set; }
         public string Name { get; set; }
         public string period { get; set; }
-        public string type { get; set; }
+        public string status { get; set; }
         public bool isPrivate { get; set; }
 
-        public List<Organizer> Organizers { get; set; }
+        public List<Organizer>? Organizers { get; set; }
+        public ActivityType? activityType { get; set; }
+        
 
     }
 }

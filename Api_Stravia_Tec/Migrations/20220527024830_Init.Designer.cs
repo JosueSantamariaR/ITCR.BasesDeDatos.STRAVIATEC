@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api_Stravia_Tec.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220524024242_CreateAthlete2")]
-    partial class CreateAthlete2
+    [Migration("20220527024830_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -123,23 +123,18 @@ namespace Api_Stravia_Tec.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("birth_date")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("lname1")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("lname2")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("nationality")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("password")
@@ -147,6 +142,9 @@ namespace Api_Stravia_Tec.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("photo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("username")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -184,6 +182,12 @@ namespace Api_Stravia_Tec.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int?>("Activityid")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("AthleteId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -201,7 +205,11 @@ namespace Api_Stravia_Tec.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Challenge");
+                    b.HasIndex("Activityid");
+
+                    b.HasIndex("AthleteId");
+
+                    b.ToTable("Challenges");
                 });
 
             modelBuilder.Entity("Api_Stravia_Tec.Group", b =>
@@ -222,7 +230,7 @@ namespace Api_Stravia_Tec.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Group");
+                    b.ToTable("Groups");
                 });
 
             modelBuilder.Entity("Api_Stravia_Tec.Organizer", b =>
@@ -305,7 +313,7 @@ namespace Api_Stravia_Tec.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Race");
+                    b.ToTable("Races");
                 });
 
             modelBuilder.Entity("Api_Stravia_Tec.Report", b =>
@@ -486,6 +494,19 @@ namespace Api_Stravia_Tec.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("Api_Stravia_Tec.Challenge", b =>
+                {
+                    b.HasOne("Api_Stravia_Tec.Activity", null)
+                        .WithMany("Challenges")
+                        .HasForeignKey("Activityid");
+
+                    b.HasOne("Api_Stravia_Tec.Athlete", "Athlete")
+                        .WithMany()
+                        .HasForeignKey("AthleteId");
+
+                    b.Navigation("Athlete");
+                });
+
             modelBuilder.Entity("Api_Stravia_Tec.Route", b =>
                 {
                     b.HasOne("Api_Stravia_Tec.Activity", "Activity")
@@ -559,6 +580,8 @@ namespace Api_Stravia_Tec.Migrations
 
             modelBuilder.Entity("Api_Stravia_Tec.Activity", b =>
                 {
+                    b.Navigation("Challenges");
+
                     b.Navigation("Routes");
                 });
 

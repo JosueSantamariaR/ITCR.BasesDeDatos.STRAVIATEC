@@ -7,6 +7,7 @@
         public string Description { get; set; }
 
         public List<Activity> Activity { get; set; }
-
+        public List<Organizer> Organizers { get; set; }
+        public List<Race> Races { get; set; }
     }
 }

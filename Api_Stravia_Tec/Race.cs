@@ -9,9 +9,13 @@
         public bool isPrivate { get; set; }
         public int cost { get; set; }
         public string bank_accounts { get; set; }
-        public string category { get; set; }
 
-        public List<Organizer> Organizers { get; set; }
+        // **** status sólo puede ser: inscrita, en_progreso, completado ****
+        public string status { get; set; }
+
+        public List<Organizer>? Organizers { get; set; }
+        public ActivityType? activityType { get; set; }
+        public Category? category { get; set; }
 
     }
 }

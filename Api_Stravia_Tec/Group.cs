@@ -6,8 +6,8 @@
         public string Name { get; set; }
         public string Administrator { get; set; }
 
-        public List<Organizer> Organizers { get; set; }
-        public List<Activity> Activities{ get; set; }
+        public List<Organizer>? Organizers { get; set; }
+        public List<Activity>? Activities{ get; set; }
 
     }
 }

@@ -8,29 +8,6 @@ namespace Api_Stravia_Tec.Controllers
     public class AthleteController : ControllerBase
     {
 
-        private static List<Athlete> athletes = new List<Athlete> {
-
-            new Athlete{
-                id = 1,
-                birth_date = new DateTime(2018, 7, 25).ToString("dd-MM-yyyy"),
-                name = "Jose",
-                lname1 = "Mendoza",
-                lname2 = "Mata",
-                nationality = "Costarricense",
-                password = "1234",
-                photo = "un mapa de bits"
-            },
-            new Athlete{
-                id = 2,
-                birth_date = new DateTime(2018, 7, 25).ToString("dd-MM-yyyy"),
-                name = "Juan",
-                lname1 = "Jimenez",
-                lname2 = "Solano",
-                nationality = "Colombiano",
-                password = "5678",
-                photo = "un mapa de bits"
-            }
-        };
         private readonly DataContext context;
 
         public AthleteController(DataContext context) {
@@ -44,7 +21,7 @@ namespace Api_Stravia_Tec.Controllers
             return Ok(await context.Athletes.ToListAsync());
         }
 
-        //Request to get one athletes
+        //Request to get one athlete by their id
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -69,6 +46,22 @@ namespace Api_Stravia_Tec.Controllers
             return Ok(dbathlete);
         }
 
+        //Request to search an athlete by their username
+        [HttpPost("searchAthlete")]
+        public async Task<IActionResult> searchAthlete(String athleteName)
+        {
+
+            var dbathlete = await context.Athletes
+                .Where(a => a.username == athleteName)
+                .ToListAsync();
+
+            if (dbathlete.Count == 0)
+            {
+                return Ok("Las credenciales son incorrectas, intentelo de nuevo");
+            }
+            return Ok(dbathlete);
+        }
+
         //Request to add one athlete to athletes, registration of the athlete
         [HttpPost]
         public async Task<IActionResult> addAthlete(Athlete athlete)
@@ -88,18 +81,25 @@ namespace Api_Stravia_Tec.Controllers
                 return BadRequest("athlete not found");
 
             dbAthlete.id = request.id;
+            dbAthlete.username = request.username;
+            dbAthlete.password = request.password;
+            dbAthlete.name = request.name;
             dbAthlete.lname1 = request.lname1;
             dbAthlete.lname2 = request.lname2;
-            dbAthlete.name = request.name;
+            dbAthlete.birth_date = request.birth_date;
+            dbAthlete.current_age = request.current_age;
             dbAthlete.nationality = request.nationality;
-            dbAthlete.password = request.password;
             dbAthlete.photo = request.photo;
+
+            dbAthlete.Activities = request.Activities;
+            dbAthlete.ActivityId = request.ActivityId;
 
             await context.SaveChangesAsync();
 
             return Ok(await context.Athletes.ToListAsync());
         }
 
+        //Delete request to delete an athlete by their id
         [HttpDelete("{id}")]
         public async Task<IActionResult> deleteAthlete(int id)
         {

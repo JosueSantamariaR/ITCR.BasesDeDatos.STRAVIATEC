@@ -16,11 +16,13 @@ namespace Api_Stravia_Tec.Data
 
         public DbSet<Organizer> Organizers { get; set; }
 
-        public DbSet<Report> Reports { get; set; }
+        public DbSet<ActivityType> ActivityTypes { get; set; }
 
         public DbSet<Race> Races { get; set; }
 
-        public DbSet<Race> Challenges { get; set; }
+        public DbSet<Challenge> Challenges { get; set; }
+
+        public DbSet<Group> Groups { get; set; }
 
     }
 }

@@ -10,6 +10,7 @@ namespace Api_Stravia_Tec
         [JsonIgnore]
         
         public Activity Activity { get; set; }
+        public List<Organizer> Organizers { get; set; }
         public int ActivityId { get; set; }
     }
 }

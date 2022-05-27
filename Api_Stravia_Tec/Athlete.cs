@@ -1,4 +1,5 @@
 ﻿namespace Api_Stravia_Tec
+
 {
     public class Athlete
     {
@@ -9,6 +10,7 @@
         public string? lname1 { get; set; }
         public string? lname2 { get; set; }
         public string? birth_date { get; set; }
+        public string current_age { get; set; }
         public string? nationality { get; set; }
         public string? photo { get; set; }
 

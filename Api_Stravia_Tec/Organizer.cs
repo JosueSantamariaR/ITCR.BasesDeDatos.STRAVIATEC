@@ -16,8 +16,7 @@
         public List<Race> Races { get; set; }
         public List<Challenge> Challenges { get; set; }
         public List<Group> Groups { get; set; }
-        public List<Report> Reports { get; set; }
-
+        public List<Category> Categories { get; set; }
 
     }
 }
