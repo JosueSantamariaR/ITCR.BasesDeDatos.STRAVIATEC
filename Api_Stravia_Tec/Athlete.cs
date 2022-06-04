@@ -6,11 +6,11 @@
         public int id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public string? name { get; set; }
-        public string? lname1 { get; set; }
-        public string? lname2 { get; set; }
+        public string? fname { get; set; }
+        public string? lname { get; set; }
+        public string? category { get; set; }
         public string? birth_date { get; set; }
-        public string current_age { get; set; }
+        public int current_age { get; set; }
         public string? nationality { get; set; }
         public string? photo { get; set; }
 

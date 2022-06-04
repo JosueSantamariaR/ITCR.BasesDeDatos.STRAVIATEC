@@ -33,11 +33,11 @@ namespace Api_Stravia_Tec.Controllers
 
         //Request to login as one athlete
         [HttpPost("login")]
-        public async Task<IActionResult> Get(Athlete athlete)
+        public async Task<IActionResult> Get(string username, string password)
         {
 
             var dbathlete = await context.Athletes
-                .Where(a => a.username == athlete.username && a.password == athlete.password)
+                .Where(a => a.username == username && a.password == password)
                 .ToListAsync();
 
             if (dbathlete.Count == 0) { 
@@ -83,9 +83,9 @@ namespace Api_Stravia_Tec.Controllers
             dbAthlete.id = request.id;
             dbAthlete.username = request.username;
             dbAthlete.password = request.password;
-            dbAthlete.name = request.name;
-            dbAthlete.lname1 = request.lname1;
-            dbAthlete.lname2 = request.lname2;
+            dbAthlete.fname = request.fname;
+            dbAthlete.lname = request.lname;
+            dbAthlete.category = request.category;
             dbAthlete.birth_date = request.birth_date;
             dbAthlete.current_age = request.current_age;
             dbAthlete.nationality = request.nationality;

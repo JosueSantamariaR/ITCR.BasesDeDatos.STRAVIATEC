@@ -7,7 +7,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/jv8CHarUk+wuYlCyxdJDgAAAAACAAAAAAAQZgAAAAEAACAAAAAGMXL3+kQSXZdNTSLti1a7dMle6+lwsa/fT2aweY6SMgAAAAAOgAAAAAIAACAAAABrohA5Yzug2jgFk8FqfOyQVmu7PKoCw1NTrVGZvF6oy4AAAACa3x6qzD/i5aX8W2TUN05SLGypXofiSwD4PacJQ0UCJ7yR2rSLSKuY9bJrbWDD/rfMjd+i1OZjgy/Bw9m8AYZ3TYJ8rb/wTUpEkIq2pHY7sa5ihhFtrzsPsyArr7aP6doRpnpg7vNPeg0iJ58xzQ3K6A2T4MgnYINt4FdKcEGS4kAAAACyp6ArVibO7oe2J4KOsh2W34t23k8zDw5HrmzoOxWzEy299Y1uwLXKjH5jWEfuGX/tB4MdRvNjUzQptSLICSwH</EncryptedPassword>
-    <History>True|2022-05-25T16:42:22.4354621Z;</History>
+    <History>False|2022-05-28T22:55:27.8934054Z;False|2022-05-28T16:51:46.9552727-06:00;False|2022-05-28T16:50:40.7152508-06:00;True|2022-05-25T10:42:22.4354621-06:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <EFMigrations Include="Api_Stravia_Tec.Data.DataContext">
