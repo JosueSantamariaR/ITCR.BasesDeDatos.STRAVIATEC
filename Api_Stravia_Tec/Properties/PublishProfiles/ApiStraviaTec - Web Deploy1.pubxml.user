@@ -7,11 +7,6 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/jv8CHarUk+wuYlCyxdJDgAAAAACAAAAAAAQZgAAAAEAACAAAADhtgZzaKbm+hO25DDArNnHK+gRBZyaZure8ivnci4/DwAAAAAOgAAAAAIAACAAAACReDGsR27VP6OWLT3z33YSVhE1SCcdH+BfjK5oLuBvc4AAAAAjVu1P5bAroRTTPcjVUwjcchNiw6Cs173CEn+7mwVsUw38sRqbGBxITcM3191WSpyZp08sZa9SuI5Ta94mwRZOM/T5EHbG/VG3SPlaqg2+PxFGzgFZAm9MKoglSZuSOoZprmWHO3hreM3ezw4kKpvqxOMn8ekpiNqyomSsh1U8o0AAAACrBFFfrfnjmiuAdRh1wafR7bA1vxbfJEma1n9F4LRLZK28r8AKrkUtO6pTFHuRQREKXD/g9SF/0hg1UeBqHT95</EncryptedPassword>
-    <History>True|2022-06-04T22:56:39.4510496Z;True|2022-06-04T16:42:05.6936551-06:00;True|2022-06-04T16:29:26.9377247-06:00;True|2022-06-04T16:26:25.9746989-06:00;True|2022-05-28T17:37:27.6211720-06:00;True|2022-05-28T17:12:22.5740513-06:00;</History>
+    <History>True|2022-06-05T00:14:22.6152031Z;False|2022-06-04T18:12:58.1378863-06:00;True|2022-06-04T16:56:39.4510496-06:00;True|2022-06-04T16:42:05.6936551-06:00;True|2022-06-04T16:29:26.9377247-06:00;True|2022-06-04T16:26:25.9746989-06:00;True|2022-05-28T17:37:27.6211720-06:00;True|2022-05-28T17:12:22.5740513-06:00;</History>
   </PropertyGroup>
-  <ItemGroup>
-    <EFMigrations Include="Api_Stravia_Tec.Data.DataContext">
-      <Value>Data Source=tcp:api-stravia-tecdbserver.database.windows.net,1433%3bInitial Catalog=Api_Stravia_Tec_db%3bUser Id=straviatecadmin%40api-stravia-tecdbserver%3bPassword=ApiStraviaTec1</Value>
-    </EFMigrations>
-  </ItemGroup>
 </Project>

@@ -32,12 +32,13 @@ namespace Api_Stravia_Tec.Controllers
         }
 
         //Request to login as one athlete
+        
         [HttpPost("login")]
-        public async Task<IActionResult> Get(string username, string password)
+        public async Task<IActionResult> Get(Athlete athlete)
         {
 
             var dbathlete = await context.Athletes
-                .Where(a => a.username == username && a.password == password)
+                .Where(a => a.username == athlete.username && a.password == athlete.password)
                 .ToListAsync();
 
             if (dbathlete.Count == 0) { 
